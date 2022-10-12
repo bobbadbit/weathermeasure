@@ -1,0 +1,19 @@
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  text-align: center;
+  background: white;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+
+
+.row-1 {
+  flex: 1
+}
+
