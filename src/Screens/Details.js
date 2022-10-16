@@ -1,111 +1,60 @@
 import React from "react";
+import { Line } from "react-chartjs-2";
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
 
 function Details() {
     return(
-<html lang="en">
-
-<head>
-    <title>Weather app</title>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
-    <style>
-        {/* .box {
-            height: calc(3.5rem + 2px);
-            border-radius: 4px;
-            border: 1px solid #ced4da;
-            padding: 12px;
-        } */}
-    </style>
-</head>
-
-<body class="bg-dark text-white">
-    <nav class="navbar bg-light position-absolute vw-100">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Welcome to Water Measurement app
-            </span>
-        </div>
-    </nav>
-        <div class="row justify-content-center align-items-center mb-4">
-            <div class="col-6 px-3.5 text-dark">
-                <div class="form-floating">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">DHBK</option>
-                        <option value="2">DHDT</option>
-                        <option value="3">FPT</option>
-                    </select>
-                    <label for="floatingSelect">Location</label>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="d-flex bg-white text-dark justify-content-between align-items-center box">
-                    <div>Last updated:</div>
-                    <div>9/9/2022 3:18 PM</div>
-                </div>
-
-            </div>
-        </div>
-        <div class="row justify-content-center align-items-center mb-4">
-            <div class="col-6">
-                <div class="d-flex bg-white text-dark justify-content-between align-items-center box">
-                    <div>Amount of rain on day:</div>
-                    <div>5mm</div>
-                </div>
-
-            </div>
-            <div class="col-6">
-                <div class="d-flex bg-white text-dark justify-content-between align-items-center box">
-                    <div>Warning:</div>
-                    <div id="status">Dry Day</div>
-                </div>
-
-            </div>
-        </div>
-        <div class="row justify-content-center align-items-center mb-4">
-            <div class="col-6">
-                <div class="d-flex bg-white text-dark justify-content-center align-items-center box"
-                    style="height: 60vh;">
-                    <div>Rainfall chart</div>
-                </div>
-
-            </div>
-            <div class="col-6">
-                <div class="d-flex bg-white text-dark justify-content-center align-items-center box"
-                    style="height: 60vh;">
-                    <div>Summary table of rainfall by month</div>
-                </div>
-
-            </div>
-        </div>
-
-
-        <footer>
-         
-        </footer>
-
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-            crossorigin="anonymous"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-            crossorigin="anonymous"></script>
-        <script>
-            status = document.getElementById("status").textContent
-            if (status.includes("Dry")) {
-                document.getElementsByTagName("body")[0].style.backgroundImage = "url('asset/sun.jpeg')"
-            } else {
-                document.getElementsByTagName("body")[0].style.backgroundImage = "url('asset/rain.jpeg')"
+        <Line
+            // height= {100}
+            // width = {200}
+            data={{
+            labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
+            datasets: [
+                {
+                data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
+                label: "Africa",
+                borderColor: "#3e95cd",
+                fill: false
+                },
+                {
+                data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
+                label: "Asia",
+                borderColor: "#8e5ea2",
+                fill: false
+                },
+                {
+                data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
+                label: "Europe",
+                borderColor: "#3cba9f",
+                fill: false
+                },
+                {
+                data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784],
+                label: "Latin America",
+                borderColor: "#e8c3b9",
+                fill: false
+                },
+                {
+                data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
+                label: "North America",
+                borderColor: "#c45850",
+                fill: false
+                }
+            ]
+            }}
+            options={{
+            title: {
+                display: true,
+                text: "World population per region (in millions)"
+            },
+            legend: {
+                display: true,
+                position: "bottom"
             }
-        </script>
-</body>
-
-</html>
+            }}
+        />
     )
 }
 

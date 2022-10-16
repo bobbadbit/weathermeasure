@@ -3,7 +3,6 @@ import Table from 'rc-table';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 
 function Overview() {
-  const columns1 = []
   const columns = [
     {
       title: 'Số thứ tự',
