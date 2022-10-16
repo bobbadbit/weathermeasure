@@ -1,0 +1,112 @@
+import React from "react";
+
+function Details() {
+    return(
+<html lang="en">
+
+<head>
+    <title>Weather app</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <style>
+        {/* .box {
+            height: calc(3.5rem + 2px);
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+            padding: 12px;
+        } */}
+    </style>
+</head>
+
+<body class="bg-dark text-white">
+    <nav class="navbar bg-light position-absolute vw-100">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Welcome to Water Measurement app
+            </span>
+        </div>
+    </nav>
+        <div class="row justify-content-center align-items-center mb-4">
+            <div class="col-6 px-3.5 text-dark">
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">DHBK</option>
+                        <option value="2">DHDT</option>
+                        <option value="3">FPT</option>
+                    </select>
+                    <label for="floatingSelect">Location</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="d-flex bg-white text-dark justify-content-between align-items-center box">
+                    <div>Last updated:</div>
+                    <div>9/9/2022 3:18 PM</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center mb-4">
+            <div class="col-6">
+                <div class="d-flex bg-white text-dark justify-content-between align-items-center box">
+                    <div>Amount of rain on day:</div>
+                    <div>5mm</div>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <div class="d-flex bg-white text-dark justify-content-between align-items-center box">
+                    <div>Warning:</div>
+                    <div id="status">Dry Day</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center mb-4">
+            <div class="col-6">
+                <div class="d-flex bg-white text-dark justify-content-center align-items-center box"
+                    style="height: 60vh;">
+                    <div>Rainfall chart</div>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <div class="d-flex bg-white text-dark justify-content-center align-items-center box"
+                    style="height: 60vh;">
+                    <div>Summary table of rainfall by month</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <footer>
+         
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+            crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+            crossorigin="anonymous"></script>
+        <script>
+            status = document.getElementById("status").textContent
+            if (status.includes("Dry")) {
+                document.getElementsByTagName("body")[0].style.backgroundImage = "url('asset/sun.jpeg')"
+            } else {
+                document.getElementsByTagName("body")[0].style.backgroundImage = "url('asset/rain.jpeg')"
+            }
+        </script>
+</body>
+
+</html>
+    )
+}
+
+export default Details;
