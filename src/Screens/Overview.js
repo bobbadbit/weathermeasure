@@ -53,7 +53,7 @@ function Overview() {
 
       render: () => 
     //   <a href="#">Details</a>,
-      <Link to ='/Details' className ='nav-link'>Chi tiết</Link>
+      <Link to = {{pathname: '/Details' }} state = "Hello"  className ='nav-link'>Chi tiết</Link>
     },
   ];
 
@@ -69,5 +69,3 @@ function Overview() {
 }
 
 export default Overview;
-
-
