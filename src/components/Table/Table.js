@@ -67,7 +67,7 @@ function MyTable({ columns, data }) {
               {row.cells.map((cell, index) => {
                 return cell.value === 'Xem' ? (
                   <td {...cell.getCellProps()} className="align-middle">
-                    <Link to="/Detail" state={'gmail'}>
+                    <Link to="/Details" state={'gmail'}>
                       {cell.render('Cell')}
                     </Link>
                   </td>

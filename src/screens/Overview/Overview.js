@@ -38,6 +38,11 @@ function Overview() {
       Filter: false,
     },
     {
+      Header: 'Thời gian cập nhật',
+      accessor: 'Time',
+      Filter: false,
+    },
+    {
       Header: 'Chi tiết',
       accessor: 'xem',
       Filter: false,
