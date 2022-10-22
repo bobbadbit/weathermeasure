@@ -11,7 +11,7 @@ function Overview() {
       Header: 'STT',
       accessor: 'id',
       Filter: defaultColumnFilter,
-      Filter: false,
+      // Filter: false,
     },
     {
       Header: 'Địa điểm',

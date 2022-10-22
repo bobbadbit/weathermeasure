@@ -1,7 +1,7 @@
-import React from 'react';
-import { useTable, useFilters } from 'react-table';
-import defaultColumnFilter from '../DefaultFilter';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useTable, useFilters } from "react-table";
+import defaultColumnFilter from "../DefaultFilter";
+import { Link } from "react-router-dom";
 
 function MyTable({ columns, data }) {
   const defaultColumn = React.useMemo(
@@ -22,18 +22,18 @@ function MyTable({ columns, data }) {
     );
 
   const getColor = (index, value) => {
-    var className = '';
+    var className = "";
     if (index === 5) {
       switch (value) {
         case 40:
-          className = 'bg-danger + bg-gradient';
+          className = "bg-danger + bg-gradient";
           break;
         case 30:
-          className = 'bg-warning + bg-gradient';
+          className = "bg-warning + bg-gradient";
 
           break;
         default:
-          className = 'bg-success + bg-gradient';
+          className = "bg-success + bg-gradient";
           break;
       }
     }
@@ -43,8 +43,8 @@ function MyTable({ columns, data }) {
   const renderColumn = (column) => {
     return (
       <th {...column.getHeaderProps()} className="align-middle ">
-        {column.render('Header')}
-        <div>{column.canFilter ? column.render('Filter') : null}</div>
+        {column.render("Header")}
+        <div>{column.canFilter ? column.render("Filter") : null}</div>
       </th>
     );
   };
@@ -60,29 +60,35 @@ function MyTable({ columns, data }) {
         ))}
       </thead>
       <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map((cell, index) => {
-                return cell.value === 'Xem' ? (
-                  <td {...cell.getCellProps()} className="align-middle">
-                    <Link to="/Details" state={'gmail'}>
-                      {cell.render('Cell')}
-                    </Link>
-                  </td>
-                ) : (
-                  <td
-                    {...cell.getCellProps()}
-                    className={`align-middle + ${getColor(index, cell.value)}`}
-                  >
-                    {cell.render('Cell')}
-                  </td>
-                );
-              })}
-            </tr>
-          );
-        })}
+        {rows.length
+          ? rows.map((row, i) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell, index) => {
+                    return cell.value === "Xem" ? (
+                      <td {...cell.getCellProps()} className="align-middle">
+                        <Link to="/Details" state={"gmail"}>
+                          {cell.render("Cell")}
+                        </Link>
+                      </td>
+                    ) : (
+                      <td
+                        {...cell.getCellProps()}
+                        className={`align-middle + ${getColor(
+                          index,
+                          cell.value
+                        )}`}
+                      >
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })
+          : <td className="text-center p-4" colSpan={100}>No data</td>
+        }
       </tbody>
     </table>
   );

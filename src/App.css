@@ -11,9 +11,11 @@ table, th, td {
   border: 1px solid black;
 }
 
-
-
 .row-1 {
   flex: 1
+}
+
+.rt-table {
+  overflow: scroll;
 }
 
